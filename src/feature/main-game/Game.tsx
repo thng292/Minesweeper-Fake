@@ -61,6 +61,7 @@ const MinesweeperFake: FC<{}> = () => {
                 () => {
                     initBoard = gameLogic.restartGame()
                     showMenu = false
+                    changetime(0);
                     changeBoard(initBoard)
                 },// Restart
             ]}
