@@ -51,10 +51,12 @@ const MinesweeperFake: FC<{}> = () => {
                 () => {
                     showMenu = false
                     showDiffMenu = true
+                    changetime(0);
                     update(!_)
                 }, //Change Diff
                 () => {
                     initBoard = gameLogic.newGame(currDiff);
+                    changetime(0);
                     showMenu = false
                     changeBoard(initBoard)
                 },// New Game
@@ -87,7 +89,6 @@ const MinesweeperFake: FC<{}> = () => {
                 DifficultiesDetail.Normal.name + " " + DifficultiesDetail.Normal.w + 'x' + DifficultiesDetail.Normal.h + '(' + DifficultiesDetail.Normal.bombs + ')',
                 DifficultiesDetail.Hard.name + " " + DifficultiesDetail.Hard.w + 'x' + DifficultiesDetail.Hard.h + '(' + DifficultiesDetail.Hard.bombs + ')',
                 DifficultiesDetail.Crazy.name + " " + DifficultiesDetail.Crazy.w + 'x' + DifficultiesDetail.Crazy.h + '(' + DifficultiesDetail.Crazy.bombs + ')',
-                "Custom [Haven't implemented yet]",
             ]}
             onClickHandle={[
                 () => {
@@ -111,12 +112,6 @@ const MinesweeperFake: FC<{}> = () => {
                 () => {
                     initBoard = gameLogic.newGame(DifficultiesDetail.Crazy)
                     currDiff = DifficultiesDetail.Crazy
-                    changeBoard(initBoard)
-                    showDiffMenu = false
-                },
-                () => {
-                    initBoard = gameLogic.newGame(DifficultiesDetail.Normal)
-                    currDiff = DifficultiesDetail.Normal
                     changeBoard(initBoard)
                     showDiffMenu = false
                 },
