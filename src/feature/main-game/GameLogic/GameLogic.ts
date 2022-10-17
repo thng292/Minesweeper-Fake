@@ -59,7 +59,6 @@ class GameLogic {
         this._noBombs = difficulty.bombs
         this.initBoardZero()
         this._bombs = RandBombs(this._width, this._height, this._noBombs)
-        debugger
         for (let i of this._bombs) {
             //console.log(i)
             this._board[i.fi][i.se].fi = -1
